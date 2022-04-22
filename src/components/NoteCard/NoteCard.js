@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateModal from '../UpdateModal/UpdateModal';
 
 
 const customStyles = {
@@ -38,6 +39,7 @@ const NoteCard = ({ note }) => {
             </button>
           </div>
           {/* <button>update</button> */}
+          <UpdateModal  />
         </div>
       </div>
     </div>
