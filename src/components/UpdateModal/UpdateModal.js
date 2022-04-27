@@ -1,5 +1,4 @@
 import React from "react";
-
 import Modal from "react-modal";
 
 const customStyles = {
@@ -70,9 +69,12 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
 
   };
 
+
+
+  
   return (
     <div>
-      <button onClick={openModal} className="color-801336 btn-sm btn">
+      <button onClick={openModal} className="button-update btn-sm btn px-4 rounded-pill">
         {" "}
         Update
       </button>
@@ -83,11 +85,11 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={closeModal} className="btn btn-sm btn-warning">
+        <button onClick={closeModal} className="btn btn-sm btn-warning mb-3">
           close
         </button>
         <div>Please insert your text</div>
-        <div className=" p-3 color-4D4C7D">
+        <div className=" p-3 input-form">
           <form className="container " onSubmit={handleUpdate}>
             <div className="input-group mb-3 mt-5">
               <input
@@ -107,7 +109,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
               ></textarea>
             </div>
             <div className="mt-4">
-              <input type="submit" value="submit" className="btn btn-info" />
+              <input type="submit" value="submit" className="btn btn-outline-info" />
             </div>
           </form>
         </div>
