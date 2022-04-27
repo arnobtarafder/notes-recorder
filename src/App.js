@@ -11,28 +11,39 @@ function App() {
 
   useEffect(() => {
 
-   fetch("notes.json")
-   .then(res=>res.json())
-   .then(data=>setNotes(data))
+    fetch("http://localhost:4000/notes")
+      .then(res => res.json())
+      .then(data => setNotes(data))
 
-    
+
   }, []);
   /*
 1. here there will be a function named handleSearch
 to handle search by query, and it will be passed as props to header
 
   */
-  
+
+  const handleSearch = event => {
+    event.preventDefault();
+    const queryText = event.target.searchText.value;
+
+    if (queryText) {
+      fetch(`http://localhost:4000/notes?userName=${queryText}`)
+        .then(res => res.json())
+        .then(data => setNotes(data))
+    }
+
+  }
 
 
 
 
 
 
-  
-/*2. here there will be a function named handleDelete
-to delete a note, and it will be passed as props to NoteCard that will be triggered using delete button.
- */
+
+  /*2. here there will be a function named handleDelete
+  to delete a note, and it will be passed as props to NoteCard that will be triggered using delete button.
+   */
 
 
 
@@ -52,7 +63,7 @@ to delete a note, and it will be passed as props to NoteCard that will be trigge
 
 
 
-   
+
 
 
 
@@ -61,11 +72,11 @@ to delete a note, and it will be passed as props to NoteCard that will be trigge
 to post data to backend, and it will be passed as props to InputFrom.
  */
 
-  
+
 
   return (
     <div className="App">
-      <Header  />
+      <Header handleSearch={handleSearch} />
       <InputForm />
       <div className="row row-cols-1 row-cols-md-3 g-4 m-2">
         {notes.map((note) => (

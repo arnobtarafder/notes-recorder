@@ -13,7 +13,7 @@ const inputForm = () => {
             className="form-control"
             placeholder="Your name"
             aria-label="Username"
-            name="user_name"
+            name="userName"
           />
         </div>
 
