@@ -1,22 +1,22 @@
 [
     {
       "_id": 1,
-      "userName": "arnob",
+      "user_name": "arnob",
       "text": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
     },
     {
       "_id": 2,
-      "userName": "tarafder",
+      "user_name": "tarafder",
       "text": "This is a widerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
     },
     {
       "_id": 3,
-      "userName": "oshan",
+      "user_name": "oshan",
       "text": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
     },
     {
       "_id": 4,
-      "userName": "babar",
+      "user_name": "babar",
       "text": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
     }
   ]

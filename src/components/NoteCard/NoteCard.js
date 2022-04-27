@@ -10,9 +10,8 @@ const customStyles = {
   width: "80px",
 };
 
-const NoteCard = ({ note }) => {
-  console.log(note);
-
+const NoteCard = ({ note, handleDelete }) => {
+// console.log(note);
 
   return (
     <div className="col mt-5" style={{ position: "relative" }}>
@@ -28,11 +27,12 @@ const NoteCard = ({ note }) => {
         </div>
         <div className="card-body mt-5">
           <h5 className="card-title">Author : {note.userName}</h5>
-          <p className="card-text">{note.text}</p>
+          <p className="card-text">{note.textData}</p>
         </div>
         <div className="card-footer d-flex justify-content-center">
           <div>
             <button
+              onClick={() => handleDelete(note._id)}
               className="color-801336 btn btn-sm mx-2 "
               
             >
@@ -40,7 +40,7 @@ const NoteCard = ({ note }) => {
             </button>
           </div>
           {/* <button>update</button> */}
-          <UpdateModal  />
+          <UpdateModal id={note._id}/>
         </div>
       </div>
     </div>
