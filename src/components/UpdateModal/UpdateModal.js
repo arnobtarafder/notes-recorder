@@ -37,23 +37,38 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
   }
 
 
-const handleUpdate = (event) => {
-  event.preventDefault();
-  // console.log("hello");
-  const userName = event.target.userName.value;
-  const textData = event.target.textData.value;
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    // console.log("hello");
+    const userName = event.target.userName.value;
+    const textData = event.target.textData.value;
 
-  // console.log(userName, textData);
-  fetch(`http://localhost:4000/note/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userName, textData }),
-  })
-    .then((res) => res.json())
-    .then((data) => setIsReload(!isReload));
-};
+    // console.log(userName, textData);
+    if (userName) {
+      fetch(`http://localhost:4000/note/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userName }),
+      })
+        .then((res) => res.json())
+        .then((data) => setIsReload(!isReload));
+    }
+
+    if (textData) {
+      fetch(`http://localhost:4000/note/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ textData }),
+      })
+        .then((res) => res.json())
+        .then((data) => setIsReload(!isReload));
+    }
+
+  };
 
   return (
     <div>
