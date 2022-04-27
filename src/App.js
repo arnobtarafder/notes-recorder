@@ -1,7 +1,7 @@
 import "./App.css";
-import Header from "./components/header/Header";
-import InputForm from "./components/inputForm/InputForm";
-import NoteCard from "./components/noteCard/NoteCard";
+import Header from "./components/Header/Header";
+import InputForm from "./components/InputForm/InputForm";
+import NoteCard from "./components/NoteCard/NoteCard";
 import { useEffect, useState } from "react";
 
 

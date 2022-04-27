@@ -1,35 +1,36 @@
 import React from "react";
 
-const Header = () => {
-  
-  
-  
-  
+const inputForm = () => {
+
+
+
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container-fluid">
-        <span className="fw-bold fs-5 text-white mx-auto">NOTES_TRACKER</span>
-
-
-        <form className="d-flex">
-
+    <div className=" p-3 color-4D4C7D">
+      <form className="container " >
+        <div className="input-group mb-3 mt-5">
           <input
-            className="form-control me-2"
-            type="search"
-            name="searchText"
-            placeholder="Search"
-            aria-label="Search"
+            type="text"
+            className="form-control"
+            placeholder="Your name"
+            aria-label="Username"
+            name="user_name"
           />
-          <button className="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-    </nav>
+        </div>
+
+        <div className="input-group">
+          <span className="input-group-text">Your notes</span>
+          <textarea
+            className="form-control"
+            aria-label="With textarea"
+            name="text"
+          ></textarea>
+        </div>
+        <div className="mt-4">
+          <input type="submit" value="submit" className="btn btn-info" />
+        </div>
+      </form>
+    </div>
   );
-
-
-
 };
 
-export default Header;
+export default inputForm;
