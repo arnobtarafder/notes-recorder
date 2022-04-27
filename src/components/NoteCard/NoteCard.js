@@ -10,7 +10,7 @@ const customStyles = {
   width: "80px",
 };
 
-const NoteCard = ({ note, handleDelete }) => {
+const NoteCard = ({ note, handleDelete,isReload,setIsReload }) => {
   // console.log(note);
 
   return (
@@ -27,7 +27,10 @@ const NoteCard = ({ note, handleDelete }) => {
         </div>
 
         <div className="card-body mt-5">
-          <h5 className="card-title"><span className='text-decoration-underline author-name'>Author</span> : <span className='author-name'>{note.userName}</span></h5>
+          <h5 className="card-title"><span className='text-decoration-underline author-name'>Author</span> : <span className='author-name'>{note.userName}</span><hr /></h5>
+          
+          <h5 className="card-title"><span className='text-decoration-underline author-name'>Topic</span> : <span className='author-name'>{note.topicName}</span></h5>
+
           <p className="card-text lh-base pt-2">{note.textData}</p>
         </div>
 
@@ -42,7 +45,7 @@ const NoteCard = ({ note, handleDelete }) => {
             </button>
           </div>
           {/* <button>update</button> */}
-          <UpdateModal id={note._id} />
+          <UpdateModal setIsReload={setIsReload} isReload={isReload} id={note._id}/>
         </div>
       </div>
     </div>

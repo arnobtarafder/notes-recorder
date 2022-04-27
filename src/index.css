@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 30px;
 }
 
 code {
@@ -38,7 +39,7 @@ code {
 .note-card {
   background-color: #fdfad4;
   color: rgb(114, 129, 112);
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: scroll;
 }
 

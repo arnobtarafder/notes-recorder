@@ -13,6 +13,17 @@ const inputForm = ({ handlePost }) => {
             aria-label="Username"
             name="userName"
           />
+        </div> 
+        
+        <div className="input-group mb-3">
+          <span className="input-group-text">Topic</span>
+          <input
+            type="text"
+            className="form-control py-2"
+            placeholder="Your name"
+            name="topicName"
+            aria-label="Username"
+          />
         </div>
 
         <div className="input-group">

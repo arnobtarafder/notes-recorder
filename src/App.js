@@ -8,16 +8,16 @@ import "./App.css";
 
 function App() {
   const [notes, setNotes] = useState([]);
-  // const [isReload, setIsReload] = useState(false);
+  const [isReload, setIsReload] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:4000/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data));
-  }, [notes]);
+  }, []);
 
 
-  
+
   /*
 1. here there will be a function named handleSearch
 to handle search by query, and it will be passed as props to header
@@ -32,11 +32,17 @@ to handle search by query, and it will be passed as props to header
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }
+    if (queryText) {
+      fetch(`http://localhost:4000/notes?topicName=${queryText}`)
+        .then((res) => res.json())
+        .then((data) => setNotes(data));
+    }
   };
 
 
 
-  /*2. here there will be a function named handleDelete
+  /*
+2. here there will be a function named handleDelete
 to delete a note, and it will be passed as props to NoteCard that will be triggered using delete button.
  */
 
@@ -54,7 +60,7 @@ to delete a note, and it will be passed as props to NoteCard that will be trigge
   };
 
 
-  
+
   /*
 3. for updating data you need to pass isReload, setISReload as props to NodeCard component
  */
@@ -68,6 +74,7 @@ to post data to backend, and it will be passed as props to InputFrom.
     event.preventDefault();
     const userName = event.target.userName.value;
     const textData = event.target.textData.value;
+    const topicName = event.target.topicName.value;
 
     console.log({ userName, textData });
 
@@ -77,7 +84,7 @@ to post data to backend, and it will be passed as props to InputFrom.
         "Content-type": "application/json",
       },
 
-      body: JSON.stringify({ userName, textData }),
+      body: JSON.stringify({ userName, textData, topicName }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -87,20 +94,20 @@ to post data to backend, and it will be passed as props to InputFrom.
   };
 
 
-  
+
 
   return (
     <div className="App">
-      <Header handleSearch = {handleSearch} />
-      <InputForm handlePost = {handlePost} />
+      <Header handleSearch={handleSearch} />
+      <InputForm handlePost={handlePost} />
       <div className="row row-cols-1 row-cols-md-3 g-4 m-2">
         {notes.map((note) => (
           <NoteCard
-            note = {note}
-            handleDelete = {handleDelete}
-            key = {note._id}
-          // setIsReload = {setIsReload}
-          // isReload = {isReload}
+            note={note}
+            handleDelete={handleDelete}
+            key={note._id}
+            setIsReload={setIsReload}
+            isReload={isReload}
           />
         ))}
       </div>
