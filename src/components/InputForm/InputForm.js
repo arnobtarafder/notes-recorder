@@ -32,7 +32,7 @@ const inputForm = ({ handlePost }) => {
             className="form-control"
             aria-label="With textarea"
             name="textData"
-            placeholder="Write you note"
+            placeholder="Write your note"
           ></textarea>
         </div>
         <div className="mt-4">

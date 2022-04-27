@@ -12,6 +12,7 @@ const customStyles = {
   },
 };
 
+
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
@@ -44,7 +45,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
 
     // console.log(userName, textData);
     if (userName) {
-      fetch(`http://localhost:4000/note/${id}`, {
+      fetch(`https://boiling-badlands-47507.herokuapp.com/note/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +57,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
     }
 
     if (textData) {
-      fetch(`http://localhost:4000/note/${id}`, {
+      fetch(`https://boiling-badlands-47507.herokuapp.com/note/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -89,27 +90,28 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
           close
         </button>
         <div>Please insert your text</div>
-        <div className=" p-3 input-form">
+        <div className=" p-3 input-form px-5 py-5">
           <form className="container " onSubmit={handleUpdate}>
-            <div className="input-group mb-3 mt-5">
+            <div className="input-group mb-3 mt-5 ps-5">
               <input
                 type="text"
-                className="form-control"
+                className="form-control-lg px-4 pe-5"
                 placeholder="Your name"
                 aria-label="Username"
                 name="userName"
               />
             </div>
 
-            <div className="input-group">
+            <div className="input-group px-5">
               <textarea
-                className="form-control"
+                className="form-control-lg px-5 py-5"
                 aria-label="With textarea"
                 name="textData"
-              ></textarea>
+                placeholder="Write your note here"
+                ></textarea>
             </div>
             <div className="mt-4">
-              <input type="submit" value="submit" className="btn btn-outline-info" />
+              <input type="submit" value="submit" className="btn btn-outline-info px-3 ms-5" />
             </div>
           </form>
         </div>

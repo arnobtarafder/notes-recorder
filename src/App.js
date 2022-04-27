@@ -11,7 +11,7 @@ function App() {
   const [isReload, setIsReload] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/notes")
+    fetch("https://boiling-badlands-47507.herokuapp.com/notes")
       .then((res) => res.json())
       .then((data) => setNotes(data));
   }, []);
@@ -28,12 +28,12 @@ to handle search by query, and it will be passed as props to header
     const queryText = event.target.searchText.value;
 
     if (queryText) {
-      fetch(`http://localhost:4000/notes?userName=${queryText}`)
+      fetch(`https://boiling-badlands-47507.herokuapp.com/notes?userName=${queryText}`)
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }
     if (queryText) {
-      fetch(`http://localhost:4000/notes?topicName=${queryText}`)
+      fetch(`https://boiling-badlands-47507.herokuapp.com/notes?topicName=${queryText}`)
         .then((res) => res.json())
         .then((data) => setNotes(data));
     }
@@ -49,7 +49,7 @@ to delete a note, and it will be passed as props to NoteCard that will be trigge
   const handleDelete = (id) => {
     console.log(id);
 
-    fetch(`http://localhost:4000/note/${id}`, {
+    fetch(`https://boiling-badlands-47507.herokuapp.com/note/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -78,7 +78,7 @@ to post data to backend, and it will be passed as props to InputFrom.
 
     console.log({ userName, textData });
 
-    fetch("http://localhost:4000/note", {
+    fetch("https://boiling-badlands-47507.herokuapp.com/note", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
